@@ -1,0 +1,228 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900);
+* {
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #4F4E4F;
+  font-family: "Lato", sans-serif;
+  color: white; }
+
+.fill, .wrap .bg .origami, #about .v {
+  height: 100%;
+  width: 100%; }
+
+.vwpt, .wrap .bg .bg-about, .wrap .bg .bg-splash, .sections {
+  height: 100vh;
+  width: 100vw; }
+
+.flx, #nav, #splash, #about .v, #team .people .person .info {
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 670px) {
+    .flx, #nav, #splash, #about .v, #team .people .person .info {
+      flex-direction: row; } }
+  .flx.grw > *, .grw#nav > *, .grw#splash > *, #about .grw.v > *, #team .people .person .grw.info > * {
+    flex-grow: 1; }
+
+.fw100 {
+  font-weight: 100; }
+
+.fw300, #team .people .person .info h3 {
+  font-weight: 300; }
+
+.fw400, #team .people .person .info h1 {
+  font-weight: 400; }
+
+.sh-h, .wrap, .wrap .bg .origami .left, .wrap .bg .origami .right, #nav, #team .people .person .profile {
+  box-shadow: 0px 16px 38px rgba(0, 0, 0, 0.21); }
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease; }
+
+.show {
+  opacity: 1; }
+
+.wrap {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+  .wrap .bg {
+    position: relative;
+    height: 500vh;
+    background: linear-gradient(#FF4F00, #FF4F00 50%, #4F4E4F 50%);
+    background-size: 100vw 200vh; }
+    .wrap .bg .bg-about {
+      position: fixed;
+      top: 20px;
+      background: url("../img/photo2.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom; }
+    .wrap .bg .bg-splash {
+      position: absolute;
+      z-index: 2;
+      background: #FF4F00; }
+      .wrap .bg .bg-splash:first-of-type {
+        top: 0; }
+      .wrap .bg .bg-splash:nth-of-type(2n) {
+        top: 200vh; }
+      .wrap .bg .bg-splash:nth-of-type(3n) {
+        top: 300vh;
+        background: #4F4E4F; }
+    .wrap .bg .origami {
+      position: fixed;
+      transform: translateY(-42vw);
+      z-index: 2; }
+      .wrap .bg .origami .left, .wrap .bg .origami .right {
+        position: absolute;
+        width: 142vw;
+        height: 142vw;
+        background: #FF4F00; }
+      .wrap .bg .origami .left {
+        z-index: 2;
+        transform: rotate(-45deg);
+        transform-origin: left bottom; }
+      .wrap .bg .origami .right {
+        right: 0;
+        z-index: 3;
+        transform: rotate(45deg);
+        transform-origin: right bottom; }
+
+.scroll a {
+  font-size: 2rem;
+  margin-top: 1em; }
+
+#nav {
+  background: #FF4F00;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 15px;
+  right: 15px;
+  z-index: 5;
+  border-radius: 50%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  transition: all 0.3s ease;
+  transform: rotate(0deg); }
+  #nav * {
+    transition: all 0.3s ease; }
+  #nav span {
+    background: white;
+    width: 36px;
+    height: 6px; }
+    #nav span:nth-of-type(1n) {
+      transform: translateY(250%) rotate(45deg); }
+    #nav span:nth-of-type(2n) {
+      opacity: 0; }
+    #nav span:nth-of-type(3n) {
+      transform: translateY(-250%) rotate(-45deg); }
+  #nav a {
+    position: absolute;
+    right: 50%;
+    top: 40%;
+    padding-right: 50px;
+    transform-origin: right;
+    font-size: 1.3rem; }
+    #nav a:nth-of-type(1n) {
+      transform: rotate(90deg); }
+    #nav a:nth-of-type(2n) {
+      transform: rotate(60deg); }
+    #nav a:nth-of-type(3n) {
+      transform: rotate(30deg); }
+    #nav a:nth-of-type(4n) {
+      transform: rotate(0deg); }
+  #nav.close {
+    transition: all 0.3s ease;
+    transform: rotate(-180deg); }
+    #nav.close * {
+      transition: all 0.3s ease; }
+    #nav.close a {
+      transform: rotate(0deg); }
+    #nav.close span:nth-of-type(1n) {
+      transform: translateY(0) rotate(0); }
+    #nav.close span:nth-of-type(2n) {
+      opacity: 1; }
+    #nav.close span:nth-of-type(3n) {
+      transform: translateY(0) rotate(0); }
+
+.sections {
+  position: relative;
+  z-index: 3;
+  padding: 15px; }
+
+#splash {
+  justify-content: flex-end;
+  text-align: center; }
+  #splash .logo img {
+    width: 100%; }
+  #splash .title {
+    margin: 1em; }
+  #splash .info {
+    margin: 1em; }
+  #splash .phone {
+    margin: 1em; }
+
+#about {
+  padding: 5px 15px; }
+  #about .v {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 120vw;
+    opacity: 0.1;
+    color: black; }
+  #about .info {
+    text-align: right; }
+
+#team {
+  overflow: hidden;
+  padding: 0; }
+  #team .people {
+    height: 100%;
+    width: 210vw;
+    transition: transform 0.3s ease; }
+    #team .people .person {
+      text-align: center;
+      display: inline-block;
+      width: 100vw;
+      padding: 15px; }
+      #team .people .person .profile {
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #4F4E4F;
+        background: #4F4E4F; }
+        #team .people .person .profile img {
+          width: 100%; }
+      #team .people .person .info h1 {
+        font-size: 4rem; }
+      #team .people .person .info h3 {
+        font-size: 2rem; }
+      #team .people .person .info .off {
+        font-size: 1.2rem;
+        margin: 10px;
+        color: rgba(0, 0, 0, 0.4); }
+  #team a {
+    position: absolute;
+    top: 50%;
+    font-size: 2rem;
+    left: 15px;
+    z-index: 5; }
+    #team a.right {
+      right: 15px;
+      left: auto; }
+
+#map {
+  height: 50%;
+  z-index: 3; }

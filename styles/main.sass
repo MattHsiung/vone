@@ -1,0 +1,243 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900)
+
+
+
+//colors
+$orange: #FF4F00
+$gray: #4F4E4F
+$overlay: rgba(0,0,0,0.13)
+$shadow: rgba(0,0,0,0.21)
+
+*
+	box-sizing: border-box
+h1,h2,h3,h4,h5,h6
+	margin: 0
+body
+	margin: 0
+	height: 100vh
+	width: 100vw
+	background: $gray
+	font-family: 'Lato', sans-serif
+	color: white
+
+.fill
+	height: 100%
+	width: 100%
+.vwpt
+	height: 100vh
+	width: 100vw
+.flx
+	display: flex
+	flex-direction: column
+	@media (min-width: 670px)
+		flex-direction: row
+	&.grw
+		>*
+			flex-grow: 1
+
+.fw100
+	font-weight: 100
+.fw300
+	font-weight: 300
+.fw400
+	font-weight: 400
+.sh-h
+	box-shadow: 0px 16px 38px $shadow
+.hidden
+	opacity: 0
+	transition: opacity 0.3s ease
+.show
+	opacity: 1
+.wrap
+	height: 100vh
+	width: 100vw
+	overflow-y: scroll /* has to be scroll, not auto */
+	-webkit-overflow-scrolling: touch
+	@extend .sh-h
+
+	.bg
+		position: relative
+		height: 500vh
+		background: linear-gradient($orange, $orange 50%, $gray 50%)
+		background-size: 100vw 200vh
+		.bg-about
+			@extend .vwpt
+			position: fixed
+			top: 20px
+			background: url('../img/photo2.jpg')
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: bottom
+			
+		.bg-splash
+			position: absolute
+			z-index: 2
+			@extend .vwpt
+			background: $orange
+			&:first-of-type
+				top: 0
+			&:nth-of-type(2n)
+				top: 200vh
+			&:nth-of-type(3n)
+				top: 300vh
+				background: $gray
+		.origami
+			position: fixed
+			transform: translateY(-42vw)
+			z-index: 2
+			@extend .fill
+			.left, .right
+				position: absolute
+				width: 142vw
+				height: 142vw
+				background: $orange
+				@extend .sh-h
+			.left
+				z-index: 2
+				transform: rotate(-45deg) 
+				transform-origin: left bottom
+			.right
+				right: 0
+				z-index: 3
+				transform: rotate(45deg) 
+				transform-origin: right bottom
+.scroll
+	a
+		font-size: 2rem
+		margin-top: 1em
+#nav
+	background: $orange
+	position: fixed
+	width: 60px
+	height: 60px
+	bottom: 15px
+	right: 15px
+	z-index: 5
+	border-radius: 50%
+	@extend .sh-h
+	@extend .flx
+	justify-content: space-between
+	align-items: center
+	padding: 12px
+	transition: all 0.3s ease
+	transform: rotate(0deg)
+	*
+		transition: all 0.3s ease
+	span
+		background: white
+		width: 36px
+		height: 6px
+		&:nth-of-type(1n)
+			transform: translateY(250%) rotate(45deg)
+		&:nth-of-type(2n)
+			opacity: 0
+		&:nth-of-type(3n)
+			transform: translateY(-250%) rotate(-45deg) 
+	a
+		position: absolute
+		right: 50%
+		top: 40%
+		padding-right: 50px
+		transform-origin: right
+		font-size: 1.3rem
+		&:nth-of-type(1n)
+			transform: rotate(90deg)
+		&:nth-of-type(2n)
+			transform: rotate(60deg)
+		&:nth-of-type(3n)
+			transform: rotate(30deg)
+		&:nth-of-type(4n)
+			transform: rotate(0deg)
+	&.close
+		transition: all 0.3s ease
+		transform: rotate(-180deg)
+		*
+			transition: all 0.3s ease
+		a
+			transform: rotate(0deg)
+		span
+			&:nth-of-type(1n)
+				transform: translateY(0) rotate(0)
+			&:nth-of-type(2n)
+				opacity: 1
+			&:nth-of-type(3n)
+				transform: translateY(0) rotate(0) 
+
+
+.sections
+	position: relative
+	z-index: 3
+	padding: 15px
+	@extend .vwpt
+#splash
+	justify-content: flex-end
+	text-align: center
+	@extend .flx
+	.logo
+		img
+			width: 100%
+	.title
+		margin: 1em
+	.info
+		margin: 1em
+	.phone
+		margin: 1em
+#about
+	padding: 5px 15px
+	.v 
+		@extend .fill
+		@extend .flx
+		justify-content: center
+		align-items: center
+		position: absolute
+		top: 0
+		left: 0
+		font-size: 120vw
+		opacity: 0.1
+		color: black
+	.info
+		text-align: right
+#team
+	overflow: hidden
+	padding: 0
+	.people
+		height: 100%
+		width: 210vw
+		transition: transform 0.3s ease
+		.person
+			text-align: center
+			display: inline-block
+			width: 100vw
+			padding: 15px
+			.profile
+				border-radius: 50%
+				overflow: hidden
+				border: 5px solid $gray
+				background: $gray
+				@extend .sh-h
+				img
+					width: 100%
+			.info
+				@extend .flx
+				h1
+					font-size: 4rem
+					@extend .fw400
+				h3
+					font-size: 2rem
+					@extend .fw300
+				.off
+					font-size: 1.2rem
+					margin: 10px
+					color: rgba(0,0,0,0.4)
+	a
+		position: absolute
+		top: 50%
+		font-size: 2rem
+		left: 15px
+		z-index: 5
+		&.right
+			right: 15px
+			left: auto
+#map
+	height: 50%
+	z-index: 3

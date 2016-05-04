@@ -1,0 +1,92 @@
+doctype html
+html(lang="en")
+	head
+		title V ONE
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width", initial-scale="1")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+		meta(content="yes", name="apple-mobile-web-app-capable")
+		meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
+
+		//- link(rel="stylesheet", href="css/jquery.fullpage.min.css")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css")
+		link(rel="stylesheet", href="css/animate.css")
+		link(rel="stylesheet", href="css/main.css")
+
+
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js")
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6jnmgu4GU2h4gJDPZJEJ5nOnPOW0bIlE&callback=initMap", async, defer)
+		script(src="js/script.js")
+		script(src="js/map.js")
+	body
+
+		.wrap
+			.bg
+				.bg-splash
+				.bg-about
+				.bg-splash
+				.bg-splash
+				.origami
+					.left
+					.right
+				#nav.close
+					span.1
+					span.2
+					span.3
+					a#a About
+					a#t Team
+					a#g Gallery
+					a#c Contact
+				#fullpage
+					#splash.sections
+						.logo.animated.fadeIn
+							img(src="../img/logo-white.png")
+						.title.animated.fadeInUp 
+							h1.fw400 V One Beauty Salon
+						.info
+							h2.fw300 8 Pell St.
+							h2.fw300 New York, NY
+						.phone
+							a (212) 966-7767
+						.scroll
+							a.fa.fa-chevron-down
+
+					#about.sections
+						//- .v
+						//- 	span V
+						.info
+							h1 Welcome to V One!
+							p We have been providing customers 
+							p with beautiful hair since 2001! 
+							p Please feel free to give 
+							p us a call and inquire 
+							p about our wide 
+							p range of 
+							p services.  
+
+					#team.sections
+						a#left.left.fa.fa-chevron-left
+						a#right.right.fa.fa-chevron-right
+						#people.people
+							#a.person
+								.profile
+									img(src="http://style.anu.edu.au/_anu/4/images/placeholders/person.png")
+								.info
+									h1 Suzie
+									h3 Stylist
+									span.off
+										strong Off-
+										span Thur. & Fri.
+							#b.person
+								.profile
+									img(src="http://style.anu.edu.au/_anu/4/images/placeholders/person.png")
+								.info
+									h1 Kenny
+									h3 Stylist
+									span.off
+										strong Off-
+										span Thur. & Fri.
+					#gallery.sections
+					#contact.sections
+						#map
+
