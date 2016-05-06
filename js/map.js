@@ -12,6 +12,6 @@ function initMap() {
 		map: map,
 		scrollwheel: false,
 		title: 'Hello World!',
-		icon:'../img/map-icon.png'
+		icon:'img/map-icon.png'
 	});
 };
