@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6jnmgu4GU2h4gJDPZJEJ5nOnPOW0bIlE&amp;callback=initMap" async defer></script>
-    <script src="js/script.js"></script>
-    <script src="js/map.js"></script>
+    <script src="js/min/script-min.js"></script>
+    <script src="js/min/map-min.js"></script>
   </head>
   <body>
     <div class="wrap">
@@ -22,23 +22,24 @@
         <div class="bg-about"></div>
         <div class="bg-splash"></div>
         <div class="bg-splash"></div>
+        <div class="bg-splash"></div>
         <div class="origami">
-          <div class="left"></div>
-          <div class="right"></div>
+          <div class="wing animated slideInLeft">
+            <div id="wingl" class="left"></div>
+          </div>
+          <div class="wing animated slideInRight">
+            <div id="wingr" class="right"></div>
+          </div>
         </div>
-        <div id="nav" class="close"><span class="1"></span><span class="2"></span><span class="3"></span><a id="a">About</a><a id="t">Team</a><a id="g">Gallery</a><a id="c">Contact</a></div>
+        <div id="nav" class="close"><span class="1"></span><span class="2"></span><span class="3"></span><a id="a" href="#about">About</a><a id="t" href="#team">Team</a><a id="g" href="#gallery">Gallery</a><a id="c" href="#contact">Contact</a></div>
         <div id="fullpage">
           <div id="splash" class="sections">
             <div class="logo animated fadeIn"><img src="../img/logo-white.png"></div>
-            <div class="title animated fadeInUp"> 
+            <div class="info animated fadeInUp">
               <h1 class="fw400">V One Beauty Salon</h1>
-            </div>
-            <div class="info">
               <h2 class="fw300">8 Pell St.</h2>
-              <h2 class="fw300">New York, NY</h2>
+              <h2 class="fw300">New York, NY</h2><a>(212) 966-7767</a><a class="fa fa-chevron-down"></a>
             </div>
-            <div class="phone"><a>(212) 966-7767</a></div>
-            <div class="scroll"><a class="fa fa-chevron-down"></a></div>
           </div>
           <div id="about" class="sections">
             <div class="info">
@@ -51,6 +52,7 @@
               <p>range of </p>
               <p>services.  </p>
             </div>
+            <div class="yelp"><a href="http://www.yelp.com/biz/v-one-salon-new-york-3" target="_blank"><img src="http://s500766140.onlinehome.us/Jacks_Asian_Cafe/wp-content/uploads/2014/09/People-Love-Us-on-Yelp.png"></a></div>
           </div>
           <div id="team" class="sections"><a id="left" class="left fa fa-chevron-left"></a><a id="right" class="right fa fa-chevron-right"></a>
             <div id="people" class="people">
@@ -70,9 +72,22 @@
               </div>
             </div>
           </div>
-          <div id="gallery" class="sections"></div>
+          <div id="gallery" class="sections"><a href="https://www.instagram.com/vonesalon/" target="_blank">
+              <h1>@VOneSalon <span class="fa fa-instagram"></span></h1></a>
+            <div class="outter">
+              <div class="frame">
+                <iframe src="http://snapwidget.com/bd/?u=dm9uZXNhbG9ufGlufDMyMHw4fDF8fG5vfDB8bm9uZXxvblN0YXJ0fHllc3x5ZXM=&amp;ve=040516" title="Instagram Widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;height:100%" class="snapwidget-widget"></iframe>
+              </div>
+            </div><span class="s4mo">Scroll for more!<span class="fa fa-chevron-right"> </span></span>
+            <div class="social"><a href="https://www.facebook.com/V-One-Salon-111720315521039/" target="_blank" id="fb" class="fa fa-facebook"></a><a href="https://www.instagram.com/vonesalon/" target="_blank" id="inst" class="fa fa-instagram"></a><a href="" id="tw" class="fa fa-twitter"></a></div>
+          </div>
           <div id="contact" class="sections">
             <div id="map"></div>
+            <div class="information">
+              <div class="location"><span><b> Location: </b></span><span>8 Pell St.</span><span>New York, NY 10013</span><span>Between Doyers St & Bowery </span><span>Chinatown, Civic Center</span></div>
+              <div class="hours"><span><b>Hours: </b> </span><span>Mon-Sat: 10:00am -7:30 pm</span><span>Sun: 10:00am - 7:00 pm</span></div>
+              <div class="call"><span>To schedule an appointment please call:</span><span><b>(212) 966-7767</b><span class="fa fa-phone"></span></span></div>
+            </div>
           </div>
         </div>
       </div>

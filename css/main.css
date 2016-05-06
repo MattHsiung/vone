@@ -1,4 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900);
+a {
+  text-decoration: none;
+  color: white; }
+
 * {
   box-sizing: border-box; }
 
@@ -13,7 +17,7 @@ body {
   font-family: "Lato", sans-serif;
   color: white; }
 
-.fill, .wrap .bg .origami, #about .v {
+.fill, .wrap .bg .origami {
   height: 100%;
   width: 100%; }
 
@@ -21,14 +25,15 @@ body {
   height: 100vh;
   width: 100vw; }
 
-.flx, #nav, #splash, #about .v, #team .people .person .info {
+.flx, #nav, #splash, #team .people .person, #gallery, #contact .information {
   display: flex;
   flex-direction: column; }
-  @media (min-width: 670px) {
-    .flx, #nav, #splash, #about .v, #team .people .person .info {
-      flex-direction: row; } }
-  .flx.grw > *, .grw#nav > *, .grw#splash > *, #about .grw.v > *, #team .people .person .grw.info > * {
+  .flx.grw > *, .grw#nav > *, .grw#splash > *, #team .people .grw.person > *, #team .people .person .info > *, .grw#gallery > *, #contact .grw.information > * {
     flex-grow: 1; }
+
+@media (min-width: 850px) {
+  .flx.media, .media#nav, #splash, #team .people .media.person, #team .people .person#splash, .media#gallery, #contact .media.information, #contact .information#splash {
+    flex-direction: row; } }
 
 .fw100 {
   font-weight: 100; }
@@ -39,7 +44,7 @@ body {
 .fw400, #team .people .person .info h1 {
   font-weight: 400; }
 
-.sh-h, .wrap, .wrap .bg .origami .left, .wrap .bg .origami .right, #nav, #team .people .person .profile {
+.sh-h, .wrap, .wrap .bg .origami .left, .wrap .bg .origami .right, #nav, #team .people .person .profile, #contact #map, #contact .information {
   box-shadow: 0px 16px 38px rgba(0, 0, 0, 0.21); }
 
 .hidden {
@@ -52,6 +57,7 @@ body {
 .wrap {
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch; }
   .wrap .bg {
@@ -61,21 +67,25 @@ body {
     background-size: 100vw 200vh; }
     .wrap .bg .bg-about {
       position: fixed;
-      top: 20px;
+      top: 0px;
       background: url("../img/photo2.jpg");
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
-      background-position: bottom; }
+      background-position: top; }
     .wrap .bg .bg-splash {
       position: absolute;
       z-index: 2;
       background: #FF4F00; }
       .wrap .bg .bg-splash:first-of-type {
         top: 0; }
-      .wrap .bg .bg-splash:nth-of-type(2n) {
-        top: 200vh; }
+      .wrap .bg .bg-splash:nth-of-type(5n) {
+        top: 200vh;
+        background: #FF4F00; }
       .wrap .bg .bg-splash:nth-of-type(3n) {
         top: 300vh;
+        background: #4F4E4F; }
+      .wrap .bg .bg-splash:nth-of-type(4n) {
+        top: 400vh;
         background: #4F4E4F; }
     .wrap .bg .origami {
       position: fixed;
@@ -86,6 +96,10 @@ body {
         width: 142vw;
         height: 142vw;
         background: #FF4F00; }
+        @media (min-width: 450px) {
+          .wrap .bg .origami .left, .wrap .bg .origami .right {
+            height: 100vw;
+            width: 100vw; } }
       .wrap .bg .origami .left {
         z-index: 2;
         transform: rotate(-45deg);
@@ -162,29 +176,35 @@ body {
 
 #splash {
   justify-content: flex-end;
+  align-items: center;
   text-align: center; }
-  #splash .logo img {
-    width: 100%; }
-  #splash .title {
-    margin: 1em; }
-  #splash .info {
-    margin: 1em; }
-  #splash .phone {
-    margin: 1em; }
+  @media (min-width: 850px) {
+    #splash {
+      justify-content: center; } }
+  #splash .logo {
+    max-width: 800px; }
+    #splash .logo img {
+      width: 100%; }
+  #splash .info * {
+    margin-top: 1em;
+    display: block; }
 
 #about {
   padding: 5px 15px; }
-  #about .v {
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 120vw;
-    opacity: 0.1;
-    color: black; }
   #about .info {
     text-align: right; }
+    @media (min-width: 850px) {
+      #about .info {
+        font-size: 2.3vw; } }
+  #about .yelp {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 100%;
+    animation: bounce infinite 2s;
+    max-width: 500px; }
+    #about .yelp img {
+      width: 50%; }
 
 #team {
   overflow: hidden;
@@ -192,17 +212,27 @@ body {
   #team .people {
     height: 100%;
     width: 210vw;
-    transition: transform 0.3s ease; }
+    transition: transform 0.3s ease;
+    display: flex; }
     #team .people .person {
       text-align: center;
-      display: inline-block;
+      justify-content: center;
+      align-items: center;
       width: 100vw;
       padding: 15px; }
+      @media (min-width: 850px) {
+        #team .people .person {
+          flex-direction: row;
+          align-items: center;
+          justify-content: center; }
+          #team .people .person .profile {
+            margin-right: 20px; } }
       #team .people .person .profile {
         border-radius: 50%;
         overflow: hidden;
         border: 5px solid #4F4E4F;
-        background: #4F4E4F; }
+        background: #4F4E4F;
+        max-width: 600px; }
         #team .people .person .profile img {
           width: 100%; }
       #team .people .person .info h1 {
@@ -223,6 +253,88 @@ body {
       right: 15px;
       left: auto; }
 
-#map {
-  height: 50%;
-  z-index: 3; }
+#gallery {
+  justify-content: space-around;
+  align-items: center; }
+  #gallery h1 {
+    font-size: 2.5rem;
+    text-shadow: 0px 16px 36px rgba(0, 0, 0, 0.12);
+    margin-bottom: 0.5em; }
+    #gallery h1 .fa {
+      color: #4F4E4F; }
+  #gallery .outter {
+    width: 100%;
+    max-width: 640px;
+    flex-grow: 1;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden; }
+    #gallery .outter .frame {
+      position: relative;
+      height: 100%;
+      width: 800%; }
+      #gallery .outter .frame iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+  #gallery .s4mo {
+    font-weight: 300;
+    margin-bottom: 10px;
+    animation: scrollme 1.4s infinite; }
+    #gallery .s4mo .fa {
+      margin-left: 5px; }
+  #gallery .social {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0px 16px 38px rgba(0, 0, 0, 0.21); }
+    #gallery .social a {
+      color: #FF4F00; }
+
+#contact {
+  display: flex;
+  flex-direction: column; }
+  #contact #map {
+    height: 50%;
+    flex-grow: 1;
+    z-index: 3;
+    border: 1px solid #4F4E4F; }
+  #contact .information {
+    background: #4F4E4F;
+    flex-grow: 1;
+    padding: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px; }
+    #contact .information div span {
+      font-weight: 300;
+      display: block;
+      margin-bottom: 5px; }
+      #contact .information div span.fa {
+        display: inline-block;
+        margin-left: 5px;
+        color: #FF4F00; }
+
+@keyframes bounce {
+  10% {
+    transform: rotate(-10deg); }
+  40% {
+    transform: translateY(0px); }
+  50% {
+    transform: translateY(-25px); }
+  70% {
+    transform: translateY(0px); } }
+@keyframes scrollme {
+  40% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(10px); }
+  70% {
+    transform: translateX(0px); } }
