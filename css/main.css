@@ -131,6 +131,7 @@ body {
   #nav * {
     transition: all 0.3s ease; }
   #nav span {
+    z-index: 2;
     background: white;
     width: 36px;
     height: 6px; }
@@ -142,10 +143,11 @@ body {
       transform: translateY(-250%) rotate(-45deg); }
   #nav a {
     position: absolute;
+    z-index: -1;
     right: 50%;
     top: 40%;
-    padding-right: 50px;
-    transform-origin: right;
+    margin-right: 50px;
+    transform-origin: 115px;
     font-size: 1.3rem; }
     #nav a:nth-of-type(1n) {
       transform: rotate(90deg); }
