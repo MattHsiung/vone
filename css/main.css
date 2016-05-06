@@ -307,6 +307,8 @@ body {
     flex-grow: 1;
     z-index: 3;
     border: 1px solid #4F4E4F; }
+    #contact #map.noscroll {
+      pointer-events: none; }
   #contact .information {
     background: #4F4E4F;
     flex-grow: 1;

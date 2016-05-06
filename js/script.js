@@ -37,5 +37,9 @@ $(document).ready(function() {
     	(start ===0)? start= $('.person').length-1 : --start
     	$people.css({transform: 'translateX('+ -100*start +'vw)'})
     }
+    $('#map').addClass('noscroll');
+    // $('#map').click(function(){
+    // 	$('#map').removeClass('noscroll')
+    // })
 
 });
